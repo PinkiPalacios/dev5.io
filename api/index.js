@@ -6,7 +6,7 @@ const u= require('./utils');
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.post('/', function(req,res){
-	u.sendEmail(req.body)
+	u(req.body)
 	.then(result=> res.send(j.success(result)))
 	.catch(err=> res.send(j.fail(err)))
 })
