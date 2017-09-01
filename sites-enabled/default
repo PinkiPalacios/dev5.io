@@ -1,0 +1,33 @@
+
+gzip on;
+gzip_disable "msie6";
+
+gzip_vary on;
+gzip_proxied any;
+gzip_comp_level 6;
+gzip_buffers 16 8k;
+gzip_http_version 1.1;
+gzip_types text/plain text/css application/json  application/javascript application/x-javascript text/javascript text/xml application/xml application/xml+rss;
+
+server {
+
+  listen 80;
+  server_name localhost "";
+  charset utf-8;
+
+  location / {
+    index index.htm index.html;
+    root /var/www;
+    expires 1y;
+  }
+
+    location /api {
+    rewrite /api(.*) $1  break;
+    proxy_pass http://api:3000;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection 'upgrade';
+    proxy_set_header Host $host;
+    proxy_cache_bypass $http_upgrade;
+  }
+}
