@@ -12,7 +12,7 @@ function sendEmail(template, form) {
         from: 'dev5 <hello@dev5.io>',
         to: `${form.name} <${form.email}>`,
         subject: 'Thank you for contacting us',
-        html: finalHtml,
+        text: "finalHtml",
       };
       mailgun.messages().send(data, (error, body) => {
         if (error) return reject(error);
