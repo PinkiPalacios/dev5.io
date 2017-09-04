@@ -16,7 +16,7 @@ function sendEmail(template, form) {
         to: `${form.name} <${form.email}>`,
         bcc,
         subject: 'Thank you for contacting us',
-        text: "finalHtml",
+        html: finalHtml,
       };
       mailgun.messages().send(data, (error, body) => {
         if (error) console.log('error 2',  error, body)
