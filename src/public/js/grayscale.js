@@ -22,6 +22,7 @@
   });
 
   $('#sendMessageButton').click(function(event){
+    event.preventDefault();  
 
     $(this).toggleClass('fadeOut')
     $('formSent').show();
