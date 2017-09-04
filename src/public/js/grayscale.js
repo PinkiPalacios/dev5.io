@@ -23,7 +23,7 @@
 
 	$('#sendMessageButton').click(function(event){
 		event.preventDefault();
-		$(this).toggleClass('fadeOut')
+		$('form').toggleClass('fadeOut')
 		$.ajax({
 			method: "POST",
 			url: "api/",
@@ -33,7 +33,7 @@
 				message: $("#message").val(),
 			}
 		}).done(function(){
-			$('formSent').show();
+			$('#formSent').show();
     	$("#formSent").toggleClass('effect');
 		})
  
