@@ -23,7 +23,7 @@
 
 	$('#sendMessageButton').click(function(event){
 		event.preventDefault();
-		$('form').toggleClass('fadeOut')
+		$('#contactForm').toggleClass('fadeOut')
 		$.ajax({
 			method: "POST",
 			url: "api/",
