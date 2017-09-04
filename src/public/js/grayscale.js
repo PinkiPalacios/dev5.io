@@ -36,8 +36,7 @@
 			$('#formSent').show();
     	$("#formSent").toggleClass('effect');
 		}).fail(function(){
-			$('#formSent').html( '<h3  id="formSent">Oops! There was a problem. Try again please!</h3>')
-			$('#formSent').show();
+			$('#formSent').html( 'Oops! There was a problem. Try again please!')
     	$("#formSent").toggleClass('effect');
 		})
  
