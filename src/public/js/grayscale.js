@@ -26,7 +26,7 @@
 		$(this).toggleClass('fadeOut')
 		$.ajax({
 			method: "POST",
-			url: "/api",
+			url: "api/",
 			data: {
 				name: $("#name").val(),
 				email: $("#email").val(),
