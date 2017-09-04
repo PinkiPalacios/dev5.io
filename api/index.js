@@ -5,6 +5,8 @@ const u= require('./utils');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
+app.use(bodyParser.json())
+
 app.post('/', function(req,res){
 	console.log(req.body)
 	u(req.body)
