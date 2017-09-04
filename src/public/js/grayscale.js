@@ -21,13 +21,14 @@
     }
   });
 
-  $('form').submit(function(event){
+  $('#sendMessageButton').click(function(event){
 
     $(this).toggleClass('fadeOut')
     $('formSent').show();
     $("#formSent").toggleClass('effect');
     console.log(event, this)
-    return false;
+
+    $('form').submit();
   })
   // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function() {
